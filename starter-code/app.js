@@ -153,7 +153,7 @@ let joe = new Student('Joe', 'Schmoe', 100);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+console.log(joe);
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -165,7 +165,7 @@ Student.prototype.greeting = function() {
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -176,7 +176,7 @@ Student.courseName = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+console.log(Student.courseName());
 
 
 
@@ -187,17 +187,18 @@ Student.prototype.scope = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scope());
+console.log(joe.scope());
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scopeArrow());
+console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+// The scope of "This" is referencing the constructor function of student, so it is localy scoped to the constructor function.
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// since the arrow function is not wrapped (Enclosed) than the scope of "This" is that of the window (Which im asuming means its globally scoped?)
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// The scope of "This" in joe.scope() is referencing the constructor function of student since its a prototype, so it is localy scoped to the constructor function.
+// since the arrow function is not wrapped (Enclosed) than the scope of "This" in joe.scopeArrow() is that of the window (Which im asuming means its globally scoped?) and "This" is no longer referencing our constructor its referencing the Window.
